@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="bunsho">
+<head>
+  <meta charset='utf-8'>
+  <title>bunsho</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="StateController as page">
+
+<div class="menupage" ng-show="page.isState(0)">
+
+  <div class="header">
+    <h1 class="bunsho">bunsho</h1>
+  </div>
+
+  <div class="message">
+    <p>Welcome to <span class="bunsho">bunsho</span>, an interactive grammar tool for learning Japanese. Personalize your learning session by choosing from the following topics.</p>
+  </div>
+
+  <ul class="topics" ng-controller="TopicsController as topics">
+    <li ng-repeat="topic in topics.products" ng-click="topics.selectItem(topic.id)">
+        {{topic.title}}
+        <abbr>{{topic.desc}}</abbr>
+        <div class="description" ng-show="topics.isSelected(topic.id)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="btnbegin" ng-show="topics.isSelected(topic.id)" ng-click="page.setLesson(topic.id)">いくぞ</div>
+    </li>
+  </ul>
+
+</div>
+
+<div class="prelessonpage" ng-show="page.isState(1)" ng-controller="TopicsController as topics">
+  <div class="headersm">
+    <a href ng-click="page.state = 0"><h1 class="bunsho">bunsho</h1></a>
+    <span>Current course: {{topics.products[page.lesson - 1].title}}</span>
+  </div>
+  <div class="lessonsummary">
+    <span class="lessonnumber">{{topics.products[page.lesson - 1].id}}</span>
+    <h2>{{topics.products[page.lesson - 1].title}}</h2>
+  </div>
+</div>
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
