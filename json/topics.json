@@ -2,48 +2,197 @@
   {
     "id": 1,
     "title": "Let's make it count",
-    "desc": "numbers and counting"
+    "desc": "numbers and counting",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 2,
     "title": "Particle accelerator",
-    "desc": "wa, ga, wo, no"
+    "desc": "wa, ga, wo, no",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 3,
     "title": "Moshi moshi",
-    "desc": "~desu, ka particle"
+    "desc": "~desu, ka particle",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 4,
     "title": "Here and there",
-    "desc": "dealing with location"
+    "desc": "dealing with location",
+    "description": "Japanese contains four sets of words that are used for describing location. Similarly to English, the choice between these words depends on physical distance between the speaker, listener and the object. For objects and places that are near the speaker, we use こ- words, they are the same as using \"this\" in English. For objects and places that are further from the speaker, but simultaneously near the listener, we utilize そ- words, the Japanese equivalent of \"that\". If the object or place in question is far from both the speaker and the listener, we will resort to using the あ- prefix. This variant does not have an English substitute, but is usually described in grammar books as \"that over there\", a rather corny definition. Lastly, if we want to ask about the whereabouts of an object or a place, we use words with the ど- prefix.",
+    "utilizes": [
+      {
+        "prerequisite": "これ, それ, あれ, どれ",
+        "description": "Use these to refer to unspecified objects"
+      },
+
+      {
+        "prerequisite": "この, その, あの, どの",
+        "description": "Use these to refer to specific objects"
+      },
+
+      {
+        "prerequisite": "ここ, そこ, あそこ, どこ",
+        "description": "If you want to talk about places, use these"
+      },
+
+      {
+        "prerequisite": "こちら, そちら, あちら, どちら",
+        "description": "These are the polite equivalents of -こ and -れ groups"
+      }
+    ],
+    "enabled": true
   },
 
   {
     "id": 5,
     "title": "Make it polite",
-    "desc": "~masu"
+    "desc": "~masu",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 6,
     "title": "Getting around",
-    "desc": "directional verbs, ni, he"
+    "desc": "directional verbs, ni, he",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 7,
     "title": "Back in time",
-    "desc": "past tense"
+    "desc": "past tense",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   },
 
   {
     "id": 8,
     "title": "I want X",
-    "desc": "expressing desire"
+    "desc": "expressing desire",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "utilizes": [
+      {
+        "prerequisite": "A certain grammar form",
+        "description": "You need this in order to survive"
+      },
+
+      {
+        "prerequisite": "A certain other grammar form",
+        "description": "Use this with a member of higher society"
+      },
+
+      {
+        "prerequisite": "And a totally obscure grammar form",
+        "description": "Use this if you want to be cool"
+      }
+    ],
+    "enabled": false
   }
 ]

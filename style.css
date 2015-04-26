@@ -134,7 +134,7 @@ a{
 	font-family: 'Franklin Gothic Book';
 }
 
-.btnbegin{
+.button{
 	background-color: white;
 	border: 1px solid darkred;
 	border-bottom: 5px solid darkred;
@@ -142,15 +142,29 @@ a{
 	margin-top: 0.5em;
 	text-align: center;
 	box-shadow: 0 5px 5px #ccc;
+	cursor: pointer;
+	color: darkred;
+	font-size: 1em;
 }
 
-.btnbegin:hover{
+.buttonunavailable{
+	padding: 0.3em;
+	margin-top: 0.5em;
+	text-align: center;
+	color: darkred;
+	font-size: 1em;
+}
+
+.button:hover{
 	background-color: darkred;
 	color: white;
 }
 
 .lessonsummary{
 	text-align: center;
+	max-width: 38em;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .lessonsummary .lessonnumber{
@@ -169,34 +183,51 @@ a{
 }
 
 .lessonsummary p{
-	max-width: 38em;
+	width: 100%
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 }
 
+.lessonsummary li{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+.lessonsummary li abbr{
+	display: block;
+	font-size: 0.8em;
+}
+
 .numselect{
-	font-size: 2em;
+	font-size: 1em;
 	border: 1px solid whitesmoke;
 	color: darkred;
 	padding: 0.2em;
 	text-align: center;
 	background-color: whitesmoke;
 	border-bottom: 5px solid darkred;
+	font-family: 'Franklin Gothic Demi';
 }
 
-.numsubmit{
-	font-size: 2em;
-	border: 1px solid darkred;
+.progressbar{
+	background-color: darkgray;
+	height: 0.2em;
+}
+
+.form{
+	font-family: 'Franklin Gothic Demi';
+	width: 96%;
 	color: darkred;
-	padding: 0.2em;
-	text-align: center;
-	border-bottom: 5px solid darkred;
-	background-color: white;
 	box-shadow: 0 5px 5px #ccc;
+	background-color: white;
+	display: block;
+	margin-bottom: 1em;
+	padding: 2%;
+	border: 1px solid white;
+	background: linear-gradient(235deg, transparent 10em, white 10em);
 }
 
-.numsubmit:hover{
-	color:white;
-	background-color: darkred;
+.resultspage{
+	text-align: center;
 }

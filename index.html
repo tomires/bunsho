@@ -21,8 +21,9 @@
     <li ng-repeat="topic in topics.products" ng-click="topics.selectItem(topic.id)">
         {{topic.title}}
         <abbr>{{topic.desc}}</abbr>
-        <div class="description" ng-show="topics.isSelected(topic.id)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        <div class="btnbegin" ng-show="topics.isSelected(topic.id)" ng-click="page.setLesson(topic.id)">いくぞ</div>
+        <div class="description" ng-show="topics.isSelected(topic.id)">{{topic.description}}</div>
+        <div class="button" ng-show="topics.isSelected(topic.id) && topics.isAvailable(topic.id)" ng-click="page.setLesson(topic.id - 1)">いくぞ</div>
+        <div class="buttonunavailable" ng-show="topics.isSelected(topic.id) && !topics.isAvailable(topic.id)">This topic is unavailable at the moment. :(</div>
     </li>
   </ul>
 
@@ -30,25 +31,40 @@
 
 <div class="headersm" ng-show="!page.isState(0)" ng-controller="TopicsController as topics">
   <a href ng-click="page.state = 0"><h1 class="bunsho">bunsho</h1></a>
-  <span>Current course: {{topics.products[page.lesson - 1].title}}</span>
+  <span>Current course: {{topics.products[page.lesson].title}}</span>
 </div>
 
 <div class="prelessonpage" ng-show="page.isState(1)" ng-controller="TopicsController as topics">
   <div class="lessonsummary">
-    <span class="lessonnumber">{{topics.products[page.lesson - 1].id}}</span>
-    <h2>{{topics.products[page.lesson - 1].title}}</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <form name="nofQuestionsForm"
+    <span class="lessonnumber">{{topics.products[page.lesson].id}}</span>
+    <h2>{{topics.products[page.lesson].title}}</h2>
+    <p>{{topics.products[page.lesson].description}}</p>
+    <ul>
+      <li ng-repeat="utility in topics.products[page.lesson].utilizes">
+        {{utility.prerequisite}}
+        <abbr>{{utility.description}}</abbr>
+      </li>
+    </ul>
+    <form name="nofQuestionsForm" class="form"
         ng-submit="nofQuestionsForm.$valid && page.nextState()" novalidate>
-      <input class="numselect" ng-model="page.nofquestions" type="number" min="5" max="25" value="10" required>
-      <input class="numsubmit" type="submit" value="いくぞ">
+      Choose a number of questions: <input class="numselect" ng-model="page.nofquestions" type="number" min="5" max="25" value="10" required>
+      <input class="button" type="submit" value="いくぞ">
     </form>
   </div>
 </div>
 
-<div class="prelessonpage" ng-show="page.isState(2)">
+<div class="lessonpage" ng-show="page.isState(2)">
+  <div class="progressbar" style="width: {{page.barwidth}}%"></div>
   <h2>Currently testing lesson {{page.lesson}}</h2>
-  <p>Questions remaining: {{page.nofquestions}}</p>
+  <p>Questions remaining: {{page.nofquestions - page.questionsanswered}}</p>
+  <div class="button" ng-click="page.nextQuestion()">Next question</div>
+</div>
+
+<div class="resultspage" ng-show="page.isState(3)">
+  <h2>Congratulations!</h2>
+  <p>This is where the results page would be. For the time being, here's a picture of a kitten.</p>
+  <img src="kitten.png" />
+  <div class="button" ng-click="page.nextState()">Return to the list of topics</div>
 </div>
 
   <script type="text/javascript" src="angular.min.js"></script>
