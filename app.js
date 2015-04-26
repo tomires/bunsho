@@ -10,6 +10,7 @@
        3    results page */
 
     this.lesson = 0;
+    this.nofquestions = 0;
 
     this.isState = function(xstate){
       return this.state === xstate;
@@ -26,7 +27,6 @@
       else
         this.state++;
     };
-
   });
 
   app.controller('TopicsController', ['$http', function($http){

@@ -38,8 +38,9 @@ a{
 }
 
 .headersm{
-	border-bottom: 5px solid darkred;
 	padding-bottom: 0.3em;
+	background-color: darkred;
+	color: white;
 }
 
 .headersm h1{
@@ -51,6 +52,7 @@ a{
 .headersm span{
 	font-size: 0.8em;
 	margin-left: 1em;
+	font-family: "Franklin Gothic Demi";
 }
 
 .header h1 {
@@ -69,14 +71,13 @@ a{
 							0 1px 3px rgba(0,0,0,.3),
 							0 3px 5px rgba(0,0,0,.2),
 							0 5px 10px rgba(0,0,0,.25),
-							0 10px 10px rgba(0,0,0,.2),
-							0 20px 20px rgba(0,0,0,.15);
+							0 10px 10px rgba(0,0,0,.2);
 	font-family: 'Franklin Gothic Demi';
 	color: white;
 }
 
 .message{
-  max-width: 900px;
+  max-width: 40em;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -94,7 +95,7 @@ a{
 .topics{
   list-style-type: none;
   padding: 0;
-  max-width: 900px;
+  max-width: 40em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -165,4 +166,37 @@ a{
 .lessonsummary h2{
 	font-family: 'Franklin Gothic Demi';
 	color: darkred;
+}
+
+.lessonsummary p{
+	max-width: 38em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.numselect{
+	font-size: 2em;
+	border: 1px solid whitesmoke;
+	color: darkred;
+	padding: 0.2em;
+	text-align: center;
+	background-color: whitesmoke;
+	border-bottom: 5px solid darkred;
+}
+
+.numsubmit{
+	font-size: 2em;
+	border: 1px solid darkred;
+	color: darkred;
+	padding: 0.2em;
+	text-align: center;
+	border-bottom: 5px solid darkred;
+	background-color: white;
+	box-shadow: 0 5px 5px #ccc;
+}
+
+.numsubmit:hover{
+	color:white;
+	background-color: darkred;
 }
