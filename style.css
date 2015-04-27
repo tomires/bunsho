@@ -16,6 +16,15 @@
 	     url('fonts/FranklinGothic-Demi-webfont.svg#webfont') format('svg');
 }
 
+@font-face{
+	font-family: 'ticks';
+	src: url('fonts/ticks.eot');
+	src: url('fonts/ticks.eot?#iefix') format('embedded-opentype'),
+			url('fonts/ticks.woff') format('woff'),
+			url('fonts/ticks.ttf') format('truetype'),
+			url('fonts/ticks.svg#webfont') format('svg');
+}
+
 body{
 	background-color: whitesmoke;
   margin: 0;
@@ -25,6 +34,7 @@ body{
 
 a{
 	text-decoration: none;
+	color: darkred;
 }
 
 .header{
@@ -61,6 +71,7 @@ a{
 }
 
 .bunsho{
+	text-decoration: none;
 	text-shadow: 0 1px 0 #ccc,
 							0 2px 0 #c9c9c9,
 							0 3px 0 #bbb,
@@ -160,14 +171,22 @@ a{
 	color: white;
 }
 
-.lessonsummary{
+.button:active{
+	background-color: darkred;
+	color: white;
+	position: relative;
+	top: 5px;
+	box-shadow: none;
+}
+
+.mainarea{
 	text-align: center;
 	max-width: 38em;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.lessonsummary .lessonnumber{
+.mainarea .lessonnumber{
 	margin-top: 2em;
 	border-bottom: 2px solid darkred;
 	display: block;
@@ -177,37 +196,42 @@ a{
 	color: darkred;
 }
 
-.lessonsummary h2{
+.mainarea h2{
 	font-family: 'Franklin Gothic Demi';
 	color: darkred;
 }
 
-.lessonsummary p{
+.mainarea p{
 	width: 100%
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 }
 
-.lessonsummary li{
+.mainarea li{
 	text-align: left;
 	margin-bottom: 1em;
 }
 
-.lessonsummary li abbr{
+.mainarea li abbr{
 	display: block;
 	font-size: 0.8em;
 }
 
-.numselect{
+.lessonpage .textinput{
+	width: 98%;
+}
+
+.textinput{
 	font-size: 1em;
-	border: 1px solid whitesmoke;
+	border: none;
 	color: darkred;
-	padding: 0.2em;
+	padding: 0.4em;
 	text-align: center;
 	background-color: whitesmoke;
-	border-bottom: 5px solid darkred;
+	border-bottom: 2px solid darkred;
 	font-family: 'Franklin Gothic Demi';
+	width: 3em;
 }
 
 .progressbar{
@@ -230,4 +254,17 @@ a{
 
 .resultspage{
 	text-align: center;
+}
+
+.ticks{
+	font-family: 'ticks';
+}
+
+.lessonpage .button{
+	display: block;
+	margin-left: auto;
+}
+
+.skip{
+	font-size: 0.8em;
 }

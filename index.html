@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-controller="StateController as page">
+<div ng-controller="QuestionController as question">
 
 <div class="menupage" ng-show="page.isState(0)">
 
@@ -35,7 +36,7 @@
 </div>
 
 <div class="prelessonpage" ng-show="page.isState(1)" ng-controller="TopicsController as topics">
-  <div class="lessonsummary">
+  <div class="mainarea">
     <span class="lessonnumber">{{topics.products[page.lesson].id}}</span>
     <h2>{{topics.products[page.lesson].title}}</h2>
     <p>{{topics.products[page.lesson].description}}</p>
@@ -45,28 +46,49 @@
         <abbr>{{utility.description}}</abbr>
       </li>
     </ul>
-    <form name="nofQuestionsForm" class="form"
-        ng-submit="nofQuestionsForm.$valid && page.nextState()" novalidate>
-      Choose a number of questions: <input class="numselect" ng-model="page.nofquestions" type="number" min="5" max="25" value="10" required>
-      <input class="button" type="submit" value="いくぞ">
+    <form name="nofQuestionsForm" class="form" ng-controller="QuestionController"
+        ng-submit="nofQuestionsForm.$valid && question.loadQuestions(topics.products[page.lesson].id) && page.nextState()" novalidate>
+      Choose a number of questions: <input class="textinput" ng-model="page.nofquestions" type="number" min="5" max="25" value="10" required>
+      <input class="button" type="submit" value="いくぞ" />
     </form>
   </div>
 </div>
 
 <div class="lessonpage" ng-show="page.isState(2)">
-  <div class="progressbar" style="width: {{page.barwidth}}%"></div>
-  <h2>Currently testing lesson {{page.lesson}}</h2>
-  <p>Questions remaining: {{page.nofquestions - page.questionsanswered}}</p>
-  <div class="button" ng-click="page.nextQuestion()">Next question</div>
+
+    <div class="progressbar" style="width: {{page.barwidth}}%"></div>
+
+  <div class="mainarea">
+
+    <p>Questions remaining: {{page.nofquestions - page.questionsanswered}}</p>
+    <h2>{{question.products[question.currentQuestion].sentence_english}}</h2>
+
+    <form name="questionForm" ng-submit="question.checkAnswer() && question.randomQuestion() && page.nextQuestion()">
+
+      <div class="form">
+        <input class="textinput" type="text" value="" ng-model="question.userAnswer" />
+      </div>
+
+      <div ng-if="!question.checkAnswer()" class="skip"><a href ng-click="question.randomQuestion() && page.nextQuestion()">Skip this question</a></div>
+      <div ng-if="question.checkAnswer()">
+        <span class="ticks">4</span> Correct answer!
+        <input type="submit" value="Next question" class="button" />
+      </div>
+
+    </form>
+  </div>
 </div>
 
 <div class="resultspage" ng-show="page.isState(3)">
-  <h2>Congratulations!</h2>
-  <p>This is where the results page would be. For the time being, here's a picture of a kitten.</p>
-  <img src="kitten.png" />
-  <div class="button" ng-click="page.nextState()">Return to the list of topics</div>
+  <div class="mainarea">
+    <h2>Congratulations!</h2>
+    <p>This is where the results page would be. For the time being, here's a picture of a kitten.</p>
+    <img src="kitten.png" />
+    <div class="button" ng-click="page.nextState()">Return to the list of topics</div>
+  </div>
 </div>
 
+</div>
   <script type="text/javascript" src="angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>

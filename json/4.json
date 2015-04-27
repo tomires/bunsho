@@ -1,0 +1,19 @@
+[
+  {
+    "sentence_english": "This is a pencil.",
+    "sentence_kana": "これはえんぴつです",
+    "sentence_romaji": "kore wa enpitsu desu"
+  },
+
+  {
+    "sentence_english": "Is this Mr. Watanabe?",
+    "sentence_kana": "こちらはわたなべさんですか",
+    "sentence_romaji": "kochira wa watanabe san desu ka"
+  },
+
+  {
+    "sentence_english": "That lake is beautiful, isn't it?",
+    "sentence_kana": "そのいけはきれいですね",
+    "sentence_romaji": "sono ike wa kirei desu ne"
+  }
+]

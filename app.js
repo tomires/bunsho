@@ -75,4 +75,38 @@
 
   }]);
 
+  app.controller('QuestionController', ['$http', function($http){
+    var bunsho = this;
+    this.products = [];
+    this.alreadyAnswered = [];
+    this.currentQuestion = 0;
+    this.userAnswer = "";
+
+    this.loadQuestions = function(lesson){
+      $http.get('/json/' + lesson + '.json').success(function(data){
+        bunsho.products = data;
+      });
+      return true;
+    };
+
+    this.randomQuestion = function(){
+      //while(this.alreadyAnswered.indexOf(this.currentQuestion) != -1)
+        this.currentQuestion = parseInt(Math.random() * bunsho.products.length);
+      //this.alreadyAnswered.push(this.currentQueestion);
+      this.userAnswer = "";
+      return true;
+    };
+
+    this.checkAnswer = function(){
+      if(bunsho.products.length == 0) return false;
+
+      if(bunsho.products[this.currentQuestion].sentence_kana == this.userAnswer
+      || bunsho.products[this.currentQuestion].sentence_romaji.replace(/ /g,'') == this.userAnswer.replace(/ /g,''))
+        return true;
+      else
+        return false;
+    };
+
+  }]);
+
 })();
