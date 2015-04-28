@@ -268,3 +268,32 @@ a{
 .skip{
 	font-size: 0.8em;
 }
+
+.hint{
+	border-top: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
+}
+
+.progressinfo{
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.questremaining{
+	float: left;
+}
+
+.resultsmeter{
+	float: right;
+}
+
+.resultsreport{
+	font-family: 'Franklin Gothic Demi';
+	font-size: 2em;
+	text-align: center;
+	color: darkred;
+}
+
+.resultsreport .ticks{
+	padding-right: 0.25em;
+}
