@@ -18,7 +18,11 @@
     <p>Welcome to <span class="bunsho">bunsho</span>, an interactive grammar tool for learning Japanese. Personalize your learning session by choosing from the following topics.</p>
   </div>
 
-  <ul class="topics" ng-controller="TopicsController as topics">
+  <div class="message warning">
+    <p>This is a work in progress. You can follow the development <a href="https://github.com/Tomires/bunsho">over at GitHub</a>. If you'd be willing to contribute with a couple questions, don't hesitate to <a href="mailto:me(at)tomires.eu">drop me an e-mail</a>.</p>
+  </div>
+
+  <ul class="topics" ng-controller="TopicController as topics">
     <li ng-repeat="topic in topics.products" ng-click="topics.selectItem(topic.id)">
         {{topic.title}}
         <abbr>{{topic.desc}}</abbr>
@@ -30,12 +34,12 @@
 
 </div>
 
-<div class="headersm" ng-show="!page.isState(0)" ng-controller="TopicsController as topics">
+<div class="headersm" ng-show="!page.isState(0)" ng-controller="TopicController as topics">
   <a href ng-click="page.state = 0"><h1 class="bunsho">bunsho</h1></a>
   <span>Current course: {{topics.products[page.lesson].title}}</span>
 </div>
 
-<div class="prelessonpage" ng-show="page.isState(1)" ng-controller="TopicsController as topics">
+<div class="prelessonpage" ng-show="page.isState(1)" ng-controller="TopicController as topics">
   <div class="mainarea">
     <span class="lessonnumber">{{topics.products[page.lesson].id}}</span>
     <h2>{{topics.products[page.lesson].title}}</h2>
@@ -95,8 +99,12 @@
 </div>
 
 </div>
-  <script type="text/javascript" src="angular.min.js"></script>
-  <script type="text/javascript" src="angular-sanitize.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="dependencies/angular.min.js"></script>
+  <script type="text/javascript" src="dependencies/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="src/app.js"></script>
+  <script type="text/javascript" src="src/state.js"></script>
+  <script type="text/javascript" src="src/topic.js"></script>
+  <script type="text/javascript" src="src/question.js"></script>
+
 </body>
 </html>

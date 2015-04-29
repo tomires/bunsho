@@ -98,6 +98,12 @@ a{
 	border-top: 5px solid darkred;
 }
 
+.warning{
+	margin-top: 1em;
+	background-color: blanchedalmond;
+	border-top: 5px solid burlywood;
+}
+
 .message p{
   margin: 0;
   padding: 2%;
