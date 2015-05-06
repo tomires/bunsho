@@ -67,7 +67,9 @@
       <span class="questremaining">Questions remaining: {{page.nofquestions - page.questionsanswered}}</span>
       <span ng-bind-html="resultsMeter" class="ticks resultsmeter"></span>
     </div>
-    <h2 ng-bind-html="parsedQuestion"></h2>
+    <h2 compile="parsedQuestion"></h2>
+
+    <ul ng-bind-html="revisionWords"></ul>
 
     <form name="questionForm" ng-submit="question.checkAnswer() && question.answerCorrect() && question.randomQuestion() && page.nextQuestion()">
 

@@ -3,11 +3,7 @@
     "sentence_english": "This is a [pencil].",
     "sentence_kana": "これはえんぴつです",
     "sentence_romaji": "kore wa enpitsu desu",
-    "dict": [
-      {
-        "word": "えんぴつ"
-      }
-    ]
+    "dict": [{"word": "えんぴつ"}]
   },
 
   {
