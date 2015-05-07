@@ -9,6 +9,7 @@ angular.module('bunsho').controller('QuestionController', ['$http', '$scope', fu
   this.noCorrect; /* number of correct answers in the current session */
   this.noIncorrect; /* number of incorrect answers in the current session */
   this.revisionList = [];
+  this.hintTranslations = [];
   $scope.parsedQuestion = '<b>Connection error</b>'; /* question as it shows up on the page */
   $scope.resultsMeter = ' '; /* results display that shows up on the page */
   $scope.revisionWords = '';
@@ -44,31 +45,56 @@ angular.module('bunsho').controller('QuestionController', ['$http', '$scope', fu
     if(lang == 'en')
       questionText = bunsho.products[this.currentQuestion].sentence_english;
 
-    questionText = questionText.replace(/\[/g,'<span class="hint" ng-click="question.showHint(0)">');
+    var translationsTemp = questionText.split(/[\[\]]/);
+    this.hintTranslations = [];
 
-    // replace with a for loop that assigns a number to each span
+    var odd = false;
+    for(var translation in translationsTemp){
+      if(odd) this.hintTranslations.push(translationsTemp[translation]);
+        odd = !odd;
+    }
 
-    questionText = questionText.replace(/\]/g,'</span>');
+    var questionTemp = '';
+    var i = 0;
+
+    while(1){
+      questionTemp = questionText.replace('[','<span class="hint" ng-click="question.showHint(' + i + ')">');
+      if(questionText == questionTemp) break;
+      questionText = questionTemp;
+      i++;
+    }
+
+    questionText = questionText.replace(/]/g,'</span>');
 
     this.redrawResults();
 
     $scope.parsedQuestion = questionText;
   };
 
+  /* compares the passed word against the revision list */
+  this.hintFound = function(word){
+    for(var hint in this.revisionList)
+      if(this.revisionList[hint].original == word) return true;
+    return false;
+  };
+
   /* grabs a hint and pushes it into the revision list */
   this.grabHint = function(number){
     var hint = this.products[this.currentQuestion].dict[number].word;
+    var hintRepresentation = [];
+    hintRepresentation.translation = this.hintTranslations[number];
+    hintRepresentation.original = hint;
 
-    if(this.revisionList.indexOf(hint) == -1)
-      this.revisionList.push(hint);
+    if(!this.hintFound(hintRepresentation.original))
+      this.revisionList.push(hintRepresentation);
 
-    return hint;
+    return hintRepresentation;
   };
 
   /* shows the hint on the page */
   this.showHint = function(number){
     var hint = this.grabHint(number);
-    $scope.revisionWords = 'このことばは<b>' + hint + '</b>です。';
+    $scope.revisionWords = hint.original;
   };
 
   /* redraws the result indicator on the top of the question page */

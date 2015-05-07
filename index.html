@@ -69,7 +69,7 @@
     </div>
     <h2 compile="parsedQuestion"></h2>
 
-    <ul ng-bind-html="revisionWords"></ul>
+    <span ng-bind-html="revisionWords" class="revisionwords"></span>
 
     <form name="questionForm" ng-submit="question.checkAnswer() && question.answerCorrect() && question.randomQuestion() && page.nextQuestion()">
 
@@ -94,6 +94,13 @@
       <span class="ticks">3</span>{{question.noCorrect}}
       <span class="ticks">7</span>{{question.noIncorrect}}
     </div>
+
+    <ul class="revisionlist">
+      <li ng-repeat="revision in question.revisionList">{{revision.translation}}
+        <span>{{revision.original}}<a href="http://jisho.org/search/{{revision.original}}" target="_blank">D</a></span>
+      </li>
+    </ul>
+
     <p>This is where the results page would be. For the time being, here's a picture of a kitten.</p>
     <img src="kitten.png" />
     <div class="button" ng-click="page.nextState()">Return to the list of topics</div>
